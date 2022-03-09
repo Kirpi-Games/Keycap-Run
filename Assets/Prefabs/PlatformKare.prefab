@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334991734314838178}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3092818, y: -0.30814004, z: 164.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3751,6 +3751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5174333214851581679}
   - component: {fileID: 5513879325957135444}
+  - component: {fileID: 1852365317118673580}
   m_Layer: 0
   m_Name: keyboardFull
   m_TagString: Untagged
@@ -3819,6 +3820,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyCapHolders: []
+--- !u!65 &1852365317118673580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5513879325957135445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.590948, y: 0.40896106, z: 3.820877}
+  m_Center: {x: -0.06716347, y: -0.75223136, z: -0.013435364}
 --- !u!1 &5832999557847505391
 GameObject:
   m_ObjectHideFlags: 0
@@ -5038,8 +5052,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25600013, y: 0.23946181, z: 0.30287614}
-  m_Center: {x: -1.1641532e-10, y: 0.10973096, z: -0.14944847}
+  m_Size: {x: 0.25600013, y: 0.2394618, z: 0.29933432}
+  m_Center: {x: 0, y: 0.10973097, z: -0.15121946}
 --- !u!1 &7789821421721621871
 GameObject:
   m_ObjectHideFlags: 0

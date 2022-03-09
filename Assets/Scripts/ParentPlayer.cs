@@ -40,11 +40,12 @@ public class ParentPlayer : MonoBehaviour
     {
         Taptic.Heavy();
         keycapsGO.Remove(dummy);
+        dummy.GetComponent<Keycaps>().DisableParentFollow();
         var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
         brokenKeycap.transform.position = dummy.transform.position;
         brokenKeycap.transform.SetParent(PlatformZMove.instance.transform);
         Destroy(dummy);
-        Destroy(brokenKeycap,1);
+        Destroy(brokenKeycap,2);
     }
     
     public void DummyAdd(GameObject dummy)
@@ -93,7 +94,7 @@ public class ParentPlayer : MonoBehaviour
         }
     }
     #endregion
-
+    
     IEnumerator FinalMove()
     {
         GetComponent<BoxCollider>().enabled = false;
@@ -101,6 +102,7 @@ public class ParentPlayer : MonoBehaviour
         PlatformZMove.instance.speed = 0;
         if (keycapsGO.Count <= 32)
         {
+            
             for (int j = 0; j < keycapsGO.Count; j++)
             {
                 yield return new WaitForSeconds(0.1f);
@@ -110,27 +112,56 @@ public class ParentPlayer : MonoBehaviour
                 keycapsGO[j].GetComponent<Keycaps>().isCollect = false;
                 if (j == keycapsGO.Count)
                 {
-                    AkaliLevelManager.Instance.LevelIsCompleted();
+                    print("Finish");
+                    StartCoroutine(LevelCompleted(false));
                 }
             }
-                
+            
         }
         else
         {
             for (int i = 0; i < 33; i++)
-            {
+            { 
+                print(i);
                 yield return new WaitForSeconds(0.1f);
                 final = true;
                 keycapsGO[i].transform.SetParent(Keyboard.instance.keyCapHolders[i].transform);
                 keycapsGO[i].GetComponent<Keycaps>().finalMove = true;
                 keycapsGO[i].GetComponent<Keycaps>().isCollect = false;
-                if (i == 33)
+                if (i == 32)
                 {
-                    AkaliLevelManager.Instance.LevelIsCompleted();
+                    print("Finish");
+                    StartCoroutine(LevelCompleted(false));
                 }
             }
-                
+            
         }
+        
+    }
+
+    IEnumerator LevelCompleted(bool x)
+    {
+        if (x)
+        {
+            yield return new WaitForSeconds(2);
+            AkaliLevelManager.Instance.LevelIsCompleted();    
+        }
+        else
+        {
+            for (int i = 33; i < keycapsGO.Count; i++)
+            {
+                yield return new WaitForSeconds(0.02f);
+                keycapsGO[i].GetComponent<Keycaps>().DisableParentFollow();
+                Destroy(keycapsGO[i]);
+                var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
+                brokenKeycap.transform.position = keycapsGO[i].transform.position;
+                brokenKeycap.transform.SetParent(PlatformZMove.instance.transform);
+                Destroy(brokenKeycap,1.5f);
+            }
+            yield return new WaitForSeconds(2.2f);
+            AkaliLevelManager.Instance.LevelIsCompleted();
+        }
+        
         
     }
     
@@ -138,8 +169,28 @@ public class ParentPlayer : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
-            StartCoroutine(FinalMove());
+            GameStateManager.Instance.GameStatePlaying.OnExecute -= Movement;
             transform.DOMoveZ(transform.position.z + 7,0.5f);
+            if (keycapsGO.Count <= 16)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+                CameraController.Instance.isFinal = true;
+                PlatformZMove.instance.speed = 0;
+                for (int i = 0; i < keycapsGO.Count; i++)
+                {
+                    keycapsGO[i].GetComponent<Keycaps>().DisableParentFollow();
+                    Destroy(keycapsGO[i]);
+                    var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
+                    brokenKeycap.transform.position = keycapsGO[i].transform.position;
+                    brokenKeycap.transform.SetParent(PlatformZMove.instance.transform);
+                    Destroy(brokenKeycap,1.5f);
+                }
+                AkaliLevelManager.Instance.LevelIsFail();
+            }
+            else
+            {
+                StartCoroutine(FinalMove());
+            }
         }
     }
 }

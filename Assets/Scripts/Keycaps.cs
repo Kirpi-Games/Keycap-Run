@@ -20,6 +20,8 @@ public class Keycaps : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         GameStateManager.Instance.GameStatePlaying.OnExecute += ParentFollow;
         GameStateManager.Instance.GameStatePlaying.OnExecute += FinalMove;
+        //GameStateManager.Instance.GameStateComplete.OnExecute += ParentFollow;
+        //GameStateManager.Instance.GameStateComplete.OnExecute += FinalMove;
     }
 
     private void Start()
@@ -42,6 +44,18 @@ public class Keycaps : MonoBehaviour
                 
             }    
         }
+    }
+
+    public void LevelFailed()
+    {
+        GameStateManager.Instance.GameStateFail.OnExecute += ParentFollow;
+        GameStateManager.Instance.GameStateFail.OnExecute += FinalMove;
+    }
+    
+    public void DisableParentFollow()
+    { 
+        GameStateManager.Instance.GameStatePlaying.OnExecute -= ParentFollow;
+        GameStateManager.Instance.GameStatePlaying.OnExecute -= FinalMove;
     }
 
     void FinalMove()
@@ -85,6 +99,7 @@ public class Keycaps : MonoBehaviour
         }
         if (other.gameObject.layer == 11)
         {
+            GetComponent<MeshRenderer>().materials[1].color = other.GetComponent<RGBDoor>().rgbMaterial.color;
             GetComponent<MeshRenderer>().materials[1].SetColor("_EmissionColor", other.GetComponent<RGBDoor>().rgbMaterial.GetColor("_EmissionColor"));
         }
     }
