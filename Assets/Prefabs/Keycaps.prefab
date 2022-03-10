@@ -62,8 +62,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 24f01d5d0c032aa4ebd1bb355111daf8, type: 2}
-  - {fileID: 2100000, guid: 6cfb04953b264cb4a820df6b53991af0, type: 2}
+  - {fileID: 2100000, guid: 1a7d94804fca1ae4e85901c91b2d9672, type: 2}
+  - {fileID: 2100000, guid: 14ba5938421e59140a4177fa5b649ca9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,6 +118,7 @@ MonoBehaviour:
   parentPlayer: {fileID: 0}
   swerveClamp: 1.7
   forceToPull: 6
+  isRGB: 0
 --- !u!136 &4104149105741257808
 CapsuleCollider:
   m_ObjectHideFlags: 0

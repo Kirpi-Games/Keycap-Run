@@ -13,6 +13,9 @@ public class Keycaps : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField] private float swerveClamp;
     [SerializeField] private float forceToPull;
+    public bool isRGB;
+    private float colorValue;
+    private float colorValue2;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class Keycaps : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         GameStateManager.Instance.GameStatePlaying.OnExecute += ParentFollow;
         GameStateManager.Instance.GameStatePlaying.OnExecute += FinalMove;
+        GameStateManager.Instance.GameStatePlaying.OnExecute += RGB;
         //GameStateManager.Instance.GameStateComplete.OnExecute += ParentFollow;
         //GameStateManager.Instance.GameStateComplete.OnExecute += FinalMove;
     }
@@ -50,12 +54,14 @@ public class Keycaps : MonoBehaviour
     {
         GameStateManager.Instance.GameStateFail.OnExecute += ParentFollow;
         GameStateManager.Instance.GameStateFail.OnExecute += FinalMove;
+        GameStateManager.Instance.GameStateFail.OnExecute += RGB;
     }
     
     public void DisableParentFollow()
     { 
         GameStateManager.Instance.GameStatePlaying.OnExecute -= ParentFollow;
         GameStateManager.Instance.GameStatePlaying.OnExecute -= FinalMove;
+        GameStateManager.Instance.GameStatePlaying.OnExecute -= RGB;
     }
 
     void FinalMove()
@@ -67,8 +73,31 @@ public class Keycaps : MonoBehaviour
             {
                 GameStateManager.Instance.GameStatePlaying.OnExecute += SetPosZero;
                 GameStateManager.Instance.GameStateComplete.OnExecute += SetPosZero;
+                GameStateManager.Instance.GameStateComplete.OnExecute += RGB;
                 finalMove = false;
             }
+        }
+    }
+
+    
+    
+    void RGB()
+    {
+        if (isRGB)
+        {
+            if (colorValue == 0)
+            {
+                DOTween.To(()=> colorValue, x=> colorValue = x, 1, 2);
+                DOTween.To(()=> colorValue2, x=> colorValue2 = x, 0, 1);
+            }
+            if (colorValue == 1)
+            {
+                DOTween.To(()=> colorValue2, x=> colorValue2 = x, 1, 2);
+                DOTween.To(()=> colorValue, x=> colorValue = x, 0, 1);
+            }
+
+            GetComponent<MeshRenderer>().materials[1].SetFloat("_Value1",colorValue);
+            GetComponent<MeshRenderer>().materials[1].SetFloat("_Value2",colorValue2);
         }
     }
 
@@ -99,8 +128,8 @@ public class Keycaps : MonoBehaviour
         }
         if (other.gameObject.layer == 11)
         {
-            GetComponent<MeshRenderer>().materials[1].color = other.GetComponent<RGBDoor>().rgbMaterial.color;
-            GetComponent<MeshRenderer>().materials[1].SetColor("_EmissionColor", other.GetComponent<RGBDoor>().rgbMaterial.GetColor("_EmissionColor"));
+            isRGB = true;
+            GetComponent<MeshRenderer>().materials[1].SetFloat("_Rgb",1);
         }
     }
 }

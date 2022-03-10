@@ -10,7 +10,6 @@ public class ParentPlayer : MonoBehaviour
 {
     public static ParentPlayer instance;
     public List<GameObject> keycapsGO;
-    public GameObject keycapDestroyParticle;
     public bool final;
 
 
@@ -40,6 +39,7 @@ public class ParentPlayer : MonoBehaviour
     {
         Taptic.Heavy();
         keycapsGO.Remove(dummy);
+        dummy.GetComponent<Keycaps>().isRGB = false;
         dummy.GetComponent<Keycaps>().DisableParentFollow();
         var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
         brokenKeycap.transform.position = dummy.transform.position;
@@ -179,6 +179,7 @@ public class ParentPlayer : MonoBehaviour
                 for (int i = 0; i < keycapsGO.Count; i++)
                 {
                     keycapsGO[i].GetComponent<Keycaps>().DisableParentFollow();
+                    keycapsGO[i].GetComponent<Keycaps>().isRGB = false;
                     Destroy(keycapsGO[i]);
                     var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
                     brokenKeycap.transform.position = keycapsGO[i].transform.position;
