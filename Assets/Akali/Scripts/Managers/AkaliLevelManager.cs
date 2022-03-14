@@ -1,3 +1,4 @@
+using System;
 using Akali.Common;
 using Akali.Scripts.Managers.StateMachine;
 using Akali.Scripts.ScriptableObjects;
@@ -9,6 +10,12 @@ namespace Akali.Scripts.Managers
     {
         public LevelListScriptableObject levels;
         public LevelScriptableObject CurrentLevel => levels.GetCurrentLevel(PlayerPrefs.GetLevel());
+
+        private void Awake()
+        {
+            Instantiate(CurrentLevel.levelPrefab);
+            Instantiate(CurrentLevel.playerPrefab);
+        }
 
         public void LevelIsPlaying()
         {

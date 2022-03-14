@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     public float min, max;
     public GameObject newTarget;
     
-    private void Awake()
+    private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         isFollow = true;

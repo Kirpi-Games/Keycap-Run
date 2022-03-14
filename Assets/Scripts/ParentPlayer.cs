@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Akali.Scripts.Managers;
 using Akali.Scripts.Managers.StateMachine;
+using Akali.Ui_Materials.Scripts.Components;
 using UnityEngine;
 using DG.Tweening;
 
@@ -148,6 +149,7 @@ public class ParentPlayer : MonoBehaviour
         if (x)
         {
             yield return new WaitForSeconds(2);
+            MoneyText.Instance.IncreaseMoney(250);
             AkaliLevelManager.Instance.LevelIsCompleted();    
         }
         else
@@ -163,6 +165,7 @@ public class ParentPlayer : MonoBehaviour
                 Destroy(brokenKeycap,1.5f);
             }
             yield return new WaitForSeconds(2.2f);
+            MoneyText.Instance.IncreaseMoney(250);
             AkaliLevelManager.Instance.LevelIsCompleted();
         }
         
