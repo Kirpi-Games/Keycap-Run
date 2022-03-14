@@ -110,10 +110,12 @@ public class ParentPlayer : MonoBehaviour
                 keycapsGO[j].transform.SetParent(Keyboard.instance.keyCapHolders[j].transform);
                 keycapsGO[j].GetComponent<Keycaps>().finalMove = true;
                 keycapsGO[j].GetComponent<Keycaps>().isCollect = false;
-                if (j == keycapsGO.Count)
+                keycapsGO[j].GetComponent<Keycaps>().id = (byte) j;
+                keycapsGO[j].GetComponent<Keycaps>().textID.text = keycapsGO[j].GetComponent<Keycaps>().keycapID[j].keycapText;
+                if (transform.childCount == 0)
                 {
                     print("Finish");
-                    StartCoroutine(LevelCompleted(false));
+                    StartCoroutine(LevelCompleted(true));
                 }
             }
             
@@ -128,6 +130,8 @@ public class ParentPlayer : MonoBehaviour
                 keycapsGO[i].transform.SetParent(Keyboard.instance.keyCapHolders[i].transform);
                 keycapsGO[i].GetComponent<Keycaps>().finalMove = true;
                 keycapsGO[i].GetComponent<Keycaps>().isCollect = false;
+                keycapsGO[i].GetComponent<Keycaps>().id = (byte) i;
+                keycapsGO[i].GetComponent<Keycaps>().textID.text = keycapsGO[i].GetComponent<Keycaps>().keycapID[i].keycapText;
                 if (i == 32)
                 {
                     print("Finish");

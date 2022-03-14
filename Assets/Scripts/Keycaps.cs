@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Akali.Scripts.Managers.StateMachine;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Keycaps : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class Keycaps : MonoBehaviour
     public bool isRGB;
     private float colorValue;
     private float colorValue2;
+    public TextMesh textID;
+    public List<KeycapID> keycapID;
+    public byte id;
+    public bool paintable;
 
     private void Awake()
     {
@@ -26,6 +32,8 @@ public class Keycaps : MonoBehaviour
         GameStateManager.Instance.GameStatePlaying.OnExecute += RGB;
         //GameStateManager.Instance.GameStateComplete.OnExecute += ParentFollow;
         //GameStateManager.Instance.GameStateComplete.OnExecute += FinalMove;
+        id = (byte) Random.Range(0, 33);
+        textID.text = keycapID[id].keycapText;
     }
 
     private void Start()
@@ -123,8 +131,11 @@ public class Keycaps : MonoBehaviour
 
         if (other.gameObject.layer == 10)
         {
-            Color door = new Color(other.GetComponent<ColorDoors>().doorColor.r, other.GetComponent<ColorDoors>().doorColor.g, other.GetComponent<ColorDoors>().doorColor.b, 255);
-            GetComponent<MeshRenderer>().materials[0].DOColor(door, 0.2f);
+            if (paintable)
+            {
+                Color door = new Color(other.GetComponent<ColorDoors>().doorColor.r, other.GetComponent<ColorDoors>().doorColor.g, other.GetComponent<ColorDoors>().doorColor.b, 255);
+                GetComponent<MeshRenderer>().materials[0].DOColor(door, 0.2f);    
+            }
         }
         if (other.gameObject.layer == 11)
         {
