@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CurveRandomizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/PostBuildStep.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="266bx3LE2n6VAhoyqHCL0fqfZl1" />
   <component name="ProjectViewState">
@@ -62,7 +63,7 @@
       <workItem from="1647174710114" duration="1656000" />
       <workItem from="1647215606962" duration="840000" />
       <workItem from="1647269694110" duration="2933000" />
-      <workItem from="1647330747979" duration="956000" />
+      <workItem from="1647330747979" duration="2086000" />
     </task>
     <servers />
   </component>

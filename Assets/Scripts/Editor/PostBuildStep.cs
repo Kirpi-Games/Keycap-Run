@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 #if UNITY_IOS
 using UnityEditor.iOS.Xcode;
-#endif
+
 using System.IO;
 public class PostBuildStep {
 
@@ -33,3 +33,4 @@ public class PostBuildStep {
         File.WriteAllText(plistPath, plistObj.WriteToString());
     }
 }
+#endif

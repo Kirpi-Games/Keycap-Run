@@ -162,7 +162,7 @@ public class ParentPlayer : MonoBehaviour
                 yield return new WaitForSeconds(0.02f);
                 keycapsGO[i].GetComponent<Keycaps>().DisableParentFollow();
                 Destroy(keycapsGO[i]);
-                var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
+                var brokenKeycap = AkaliPoolManager.Instance.Dequeue<BrokenKeycap>();
                 brokenKeycap.transform.position = keycapsGO[i].transform.position;
                 brokenKeycap.transform.SetParent(PlatformZMove.instance.transform);
                 Destroy(brokenKeycap,1.5f);
@@ -191,7 +191,7 @@ public class ParentPlayer : MonoBehaviour
                     keycapsGO[i].GetComponent<Keycaps>().DisableParentFollow();
                     keycapsGO[i].GetComponent<Keycaps>().isRGB = false;
                     Destroy(keycapsGO[i]);
-                    var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
+                    var brokenKeycap = AkaliPoolManager.Instance.Dequeue<BrokenKeycap>();
                     brokenKeycap.transform.position = keycapsGO[i].transform.position;
                     brokenKeycap.transform.SetParent(PlatformZMove.instance.transform);
                     Destroy(brokenKeycap,1.5f);
