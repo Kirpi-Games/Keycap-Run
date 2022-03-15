@@ -17,6 +17,10 @@ public class ParentPlayer : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
         GameStateManager.Instance.GameStateMainMenu.OnExecute += StartGame;
         GameStateManager.Instance.GameStatePlaying.OnExecute += Movement;
         GameStateManager.Instance.GameStatePlaying.OnExecute += FailCondition;
@@ -24,7 +28,6 @@ public class ParentPlayer : MonoBehaviour
         {
             keycapsGO.Add(dummy.gameObject);
         }
-        
     }
 
 
@@ -40,9 +43,9 @@ public class ParentPlayer : MonoBehaviour
     {
         Taptic.Heavy();
         keycapsGO.Remove(dummy);
-        dummy.GetComponent<Keycaps>().isRGB = false;
-        dummy.GetComponent<Keycaps>().DisableParentFollow();
-        var brokenKeycap = AkaliPoolManager.Instance.Dequeue<MeshCollider>();
+        //dummy.GetComponent<Keycaps>().isRGB = false;
+        //dummy.GetComponent<Keycaps>().DisableParentFollow();
+        var brokenKeycap = AkaliPoolManager.Instance.Dequeue<BrokenKeycap>();
         brokenKeycap.transform.position = dummy.transform.position;
         brokenKeycap.transform.SetParent(PlatformZMove.instance.transform);
         Destroy(dummy);
@@ -68,7 +71,7 @@ public class ParentPlayer : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float xClamp;
     public bool pressed;
-    private float transformX, sensitivity = 5;
+    private float transformX, sensitivity = 7;
     private Vector3 firstPos, secondPos;
     
     void Movement()

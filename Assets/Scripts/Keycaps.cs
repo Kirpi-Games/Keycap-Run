@@ -27,18 +27,16 @@ public class Keycaps : MonoBehaviour
     {
         instance = this;
         _rigidbody = GetComponent<Rigidbody>();
-        GameStateManager.Instance.GameStatePlaying.OnExecute += ParentFollow;
-        GameStateManager.Instance.GameStatePlaying.OnExecute += FinalMove;
-        GameStateManager.Instance.GameStatePlaying.OnExecute += RGB;
-        //GameStateManager.Instance.GameStateComplete.OnExecute += ParentFollow;
-        //GameStateManager.Instance.GameStateComplete.OnExecute += FinalMove;
-        id = (byte) Random.Range(0, 33);
-        textID.text = keycapID[id].keycapText;
     }
 
     private void Start()
     {
-        parentPlayer = ParentPlayer.instance.gameObject; 
+        parentPlayer = ParentPlayer.instance.gameObject;
+        GameStateManager.Instance.GameStatePlaying.OnExecute += ParentFollow;
+        GameStateManager.Instance.GameStatePlaying.OnExecute += FinalMove;
+        GameStateManager.Instance.GameStatePlaying.OnExecute += RGB;
+        id = (byte) Random.Range(0, 33);
+        textID.text = keycapID[id].keycapText;
     }
 
     private void ParentFollow()
