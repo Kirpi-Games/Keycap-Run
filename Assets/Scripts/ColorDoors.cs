@@ -6,7 +6,7 @@ using UnityEngine;
 public class ColorDoors : MonoBehaviour
 {
     public Color doorColor;
-
+    public Color emColor;
     private void Awake()
     {
         GetComponent<MeshRenderer>().material.color = doorColor;

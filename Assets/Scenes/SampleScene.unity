@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.23098165, g: 0.61896724, b: 0.87167597, a: 1}
+  m_IndirectSpecularColor: {r: 0.23071367, g: 0.6189111, b: 0.87174296, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -454,7 +454,7 @@ MonoBehaviour:
   smoothSpeed: 1
   offset: {x: 0, y: 7.09, z: -8.09}
   lookatOffset: {x: 0, y: 1.9, z: -0.31}
-  finalOffset: {x: 0, y: 17.6, z: -9}
+  finalOffset: {x: 0, y: 17.6, z: -12}
   isFollow: 1
   isFinal: 0
   min: -4

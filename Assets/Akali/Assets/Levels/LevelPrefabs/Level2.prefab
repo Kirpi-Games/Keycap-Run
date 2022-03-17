@@ -352,16 +352,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.b
-      value: 0.2235294
+      value: 0.7058824
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 0.49585515
+      value: 0.8862745
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name
@@ -558,16 +562,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.b
-      value: 0.5321106
+      value: 0.8862745
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 0.2235294
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 1
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name
@@ -632,16 +656,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
-      propertyPath: doorColor.b
+      propertyPath: emColor.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.b
+      value: 0.95686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.g
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.r
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.b
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 0.2235294
+      value: 0.8117647
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 0.54011095
+      value: 0.17254902
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name
@@ -1002,16 +1046,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.b
-      value: 0.2235294
+      value: 0.043137256
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 0.8826775
+      value: 0.8117647
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 1
+      value: 0.17254902
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name
@@ -3254,16 +3302,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.b
-      value: 0.77007693
+      value: 0.8862745
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 0.2235294
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 1
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name
@@ -3982,16 +4050,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: emColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.b
-      value: 0.81327254
+      value: 0.8862745
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 0.2235294
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 1
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name
@@ -8648,16 +8736,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
+      propertyPath: doorColor.a
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.b
-      value: 0.8867924
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.g
-      value: 0.36688715
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070782, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: doorColor.r
-      value: 0.2216981
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810628776933070783, guid: 449e502d0dcd31045b4c9e462a10a9bb, type: 3}
       propertyPath: m_Name

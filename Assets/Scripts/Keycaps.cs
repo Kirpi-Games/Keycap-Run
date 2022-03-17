@@ -133,6 +133,7 @@ public class Keycaps : MonoBehaviour
             {
                 Color door = new Color(other.GetComponent<ColorDoors>().doorColor.r, other.GetComponent<ColorDoors>().doorColor.g, other.GetComponent<ColorDoors>().doorColor.b, 255);
                 GetComponent<MeshRenderer>().materials[0].DOColor(door, 0.2f);    
+                GetComponent<MeshRenderer>().materials[0].SetColor("_Emission", other.GetComponent<ColorDoors>().emColor);
             }
         }
         if (other.gameObject.layer == 11)
