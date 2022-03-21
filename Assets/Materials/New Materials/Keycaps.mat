@@ -10,8 +10,8 @@ Material:
   m_Name: Keycaps
   m_Shader: {fileID: 4800000, guid: 08ed0d9dfc7b9d54480990896ab62fe8, type: 3}
   m_ShaderKeywords: CURVEDWORLD_BEND_ID_1 CURVEDWORLD_BEND_TYPE_CLASSICRUNNER_Z_POSITIVE
-    _AMBIENTLIGHTS_ON _PERVERTEXLIGHTS_ON _TEXTUREMIX_NONE
-  m_LightmapFlags: 6
+    _AMBIENTLIGHTS_ON _EMISSION _PERVERTEXLIGHTS_ON _TEXTUREMIX_NONE
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -85,11 +85,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 0.641
-    - _Glossiness: 0.654
+    - _Glossiness: 0.39
     - _GlossyReflections: 1
     - _IncludeVertexColor: 0
     - _LightLookupOffset: 0
-    - _Metallic: 0
+    - _Metallic: 0.13
     - _Mode: 0
     - _NormalMapStrength: 1
     - _OcclusionStrength: 1
@@ -108,9 +108,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+    - _Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
     - _CurvedWorldBendSettings: {r: 2, g: 1, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.8862745, g: 0.30415058, b: 0, a: 1}
     - _EmissionMap_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _MainTex_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _NormalMap_Scroll: {r: 0, g: 0, b: 0, a: 0}

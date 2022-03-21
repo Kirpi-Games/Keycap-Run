@@ -351,18 +351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AkaliSDK
       objectReference: {fileID: 0}
-    - target: {fileID: 71679170551665800, guid: b2d06397c43734dcf88e341e71b4f2e7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 71679170551665800, guid: b2d06397c43734dcf88e341e71b4f2e7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 71679170551665800, guid: b2d06397c43734dcf88e341e71b4f2e7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d06397c43734dcf88e341e71b4f2e7, type: 3}
 --- !u!1 &963194225

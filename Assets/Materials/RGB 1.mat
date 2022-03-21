@@ -25,9 +25,11 @@ Material:
     - _Value2: 0
     - __dirty: 0
     m_Colors:
+    - _Alpha: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 22.62742, g: 0, b: 0, a: 0}
+    - _Color0: {r: 0, g: 0, b: 0, a: 1}
     - _ColorB: {r: 0, g: 0, b: 22.62742, a: 1}
     - _ColorG: {r: 0, g: 16.94838, b: 0, a: 1}
     - _ColorR: {r: 30.209387, g: 0, b: 0, a: 1}
-    - _WithoutRGB: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
+    - _WithoutRGB: {r: 0.7075471, g: 0.7075471, b: 0.7075471, a: 1}
   m_BuildTextureStacks: []
