@@ -180,7 +180,7 @@ public class ParentPlayer : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             GameStateManager.Instance.GameStatePlaying.OnExecute -= Movement;
-            transform.DOMoveZ(transform.position.z + 7,0.5f);
+            transform.DOMove(new Vector3(0,0,transform.position.z + 7),0.5f);
             if (keycapsGO.Count <= 16)
             {
                 GetComponent<BoxCollider>().enabled = false;
