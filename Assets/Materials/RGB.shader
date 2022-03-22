@@ -13,16 +13,13 @@ Shader "RGB"
 		_Value2("Value2", Range( 0 , 1)) = 0
 		_WithoutRGB("WithoutRGB", Color) = (0,0,0,0)
 		_Rgb("Rgb", Range( 0 , 1)) = 0
-		_Alpha("Alpha", Color) = (0,0,0,1)
 		[HideInInspector] __dirty( "", Int ) = 1
 	}
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Custom"  "Queue" = "Transparent+0" "IsEmissive" = "true"  }
+		Tags{ "RenderType" = "Transparent"  "Queue" = "Transparent+0" "IgnoreProjector" = "True" "IsEmissive" = "true"  }
 		Cull Back
-		Blend SrcAlpha OneMinusSrcAlpha
-		
 		CGINCLUDE
 		#include "UnityPBSLighting.cginc"
 		#include "Lighting.cginc"
@@ -42,8 +39,6 @@ Shader "RGB"
 #define _ColorG_arr RGB
 			UNITY_DEFINE_INSTANCED_PROP(float4, _ColorB)
 #define _ColorB_arr RGB
-			UNITY_DEFINE_INSTANCED_PROP(float4, _Alpha)
-#define _Alpha_arr RGB
 			UNITY_DEFINE_INSTANCED_PROP(float, _Value1)
 #define _Value1_arr RGB
 			UNITY_DEFINE_INSTANCED_PROP(float, _Value2)
@@ -65,13 +60,12 @@ Shader "RGB"
 			float _Rgb_Instance = UNITY_ACCESS_INSTANCED_PROP(_Rgb_arr, _Rgb);
 			float4 lerpResult19 = lerp( _WithoutRGB_Instance , lerpResult16 , _Rgb_Instance);
 			o.Emission = lerpResult19.rgb;
-			float4 _Alpha_Instance = UNITY_ACCESS_INSTANCED_PROP(_Alpha_arr, _Alpha);
-			o.Alpha = _Alpha_Instance.a;
+			o.Alpha = _Rgb_Instance;
 		}
 
 		ENDCG
 		CGPROGRAM
-		#pragma surface surf Standard keepalpha fullforwardshadows 
+		#pragma surface surf Standard alpha:fade keepalpha fullforwardshadows 
 
 		ENDCG
 		Pass
@@ -143,19 +137,18 @@ Shader "RGB"
 }
 /*ASEBEGIN
 Version=18900
-7;6;1906;1013;1634.891;577.2778;1.388368;True;True
-Node;AmplifyShaderEditor.ColorNode;1;-747.3867,-265.9008;Inherit;False;InstancedProperty;_ColorR;ColorR;1;1;[HDR];Create;True;0;0;0;False;0;False;22.62742,0,0,1;30.20939,0,0,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;5;-752.1578,-83.40425;Inherit;False;InstancedProperty;_ColorG;ColorG;2;1;[HDR];Create;True;0;0;0;False;0;False;0,16.94838,0,1;0,16.94838,0,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;12;-867.8575,147.9966;Inherit;False;InstancedProperty;_Value1;Value1;4;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
+9;1;1906;1010;1634.891;564.7825;1.388368;True;True
+Node;AmplifyShaderEditor.ColorNode;1;-747.3867,-265.9008;Inherit;False;InstancedProperty;_ColorR;ColorR;0;1;[HDR];Create;True;0;0;0;False;0;False;22.62742,0,0,1;30.20939,0,0,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;5;-752.1578,-83.40425;Inherit;False;InstancedProperty;_ColorG;ColorG;1;1;[HDR];Create;True;0;0;0;False;0;False;0,16.94838,0,1;0,16.94838,0,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;12;-867.8575,147.9966;Inherit;False;InstancedProperty;_Value1;Value1;3;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.LerpOp;7;-446.8037,-45.23499;Inherit;True;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.RangedFloatNode;17;-494.515,398.4823;Inherit;False;InstancedProperty;_Value2;Value2;5;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;6;-442.0328,200.4794;Inherit;False;InstancedProperty;_ColorB;ColorB;3;1;[HDR];Create;True;0;0;0;False;0;False;0,0,30.20938,1;0,0,22.62742,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;17;-494.515,398.4823;Inherit;False;InstancedProperty;_Value2;Value2;4;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ColorNode;6;-442.0328,200.4794;Inherit;False;InstancedProperty;_ColorB;ColorB;2;1;[HDR];Create;True;0;0;0;False;0;False;0,0,30.20938,1;0,0,22.62742,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.LerpOp;16;-184.3901,69.27264;Inherit;True;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;18;-410.1857,-421.7804;Inherit;False;InstancedProperty;_WithoutRGB;WithoutRGB;6;0;Create;True;0;0;0;False;0;False;0,0,0,0;0.7075471,0.7075471,0.7075471,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;20;-78.53088,544.5235;Inherit;False;InstancedProperty;_Rgb;Rgb;7;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ColorNode;18;-410.1857,-421.7804;Inherit;False;InstancedProperty;_WithoutRGB;WithoutRGB;5;0;Create;True;0;0;0;False;0;False;0,0,0,0;0.7075471,0.7075471,0.7075471,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;20;-78.53088,544.5235;Inherit;False;InstancedProperty;_Rgb;Rgb;6;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.LerpOp;19;131.1126,-17.76553;Inherit;True;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;23;221.3567,252.9662;Inherit;False;InstancedProperty;_Alpha;Alpha;8;0;Create;True;0;0;0;False;0;False;0,0,0,1;0,0,0,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;460.3682,-56.06353;Float;False;True;-1;2;ASEMaterialInspector;0;0;Standard;RGB;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Custom;0.5;True;True;0;True;Custom;;Transparent;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;0;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;False;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;460.3682,-56.06353;Float;False;True;-1;2;ASEMaterialInspector;0;0;Standard;RGB;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Transparent;0.5;True;True;0;True;Transparent;;Transparent;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;False;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;7;0;1;0
 WireConnection;7;1;5;0
 WireConnection;7;2;12;0
@@ -166,6 +159,6 @@ WireConnection;19;0;18;0
 WireConnection;19;1;16;0
 WireConnection;19;2;20;0
 WireConnection;0;2;19;0
-WireConnection;0;9;23;4
+WireConnection;0;9;20;0
 ASEEND*/
-//CHKSM=57D562C5BAEA5121CC05CA3E4F03F4A93AD6F324
+//CHKSM=3F26EA8B9F55E6B2FDC0113273896BD826A0AF5F

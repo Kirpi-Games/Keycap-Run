@@ -91,7 +91,7 @@ public class Keycaps : MonoBehaviour
     {
         if (isRGB)
         {
-            GetComponent<MeshRenderer>().materials[1].SetColor("_Alpha",new Color(0,0,0,255));
+            //GetComponent<MeshRenderer>().materials[1].SetFloat("_Rgb",1);
             if (colorValue == 0)
             {
                 DOTween.To(()=> colorValue, x=> colorValue = x, 1, 2);
