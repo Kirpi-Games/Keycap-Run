@@ -25,6 +25,7 @@ public class Keycaps : MonoBehaviour
 
     private void Awake()
     {
+        transform.DORotate(new Vector3(-90,0,0), 0.2f);
         instance = this;
         _rigidbody = GetComponent<Rigidbody>();
     }
